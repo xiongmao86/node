@@ -1,3 +1,3 @@
 #!/bin/sh
 set -x
-exec ./configure --verbose
+exec ./configure --verbose --enable-d8

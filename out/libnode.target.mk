@@ -541,7 +541,7 @@ OBJS := \
 all_deps += $(OBJS)
 
 # Make sure our dependencies are built before any of us.
-$(OBJS): | $(obj).target/deps/googletest/gtest_prod.stamp $(builddir)/node_js2c $(obj).target/tools/v8_gypfiles/v8_inspector_headers.stamp $(obj).target/tools/icu/icuuc.stamp $(builddir)/openssl-cli $(builddir)/ngtcp2_test_server $(builddir)/ngtcp2_test_client
+$(OBJS): | $(obj).target/deps/googletest/gtest_prod.stamp $(builddir)/node_js2c $(obj).target/tools/v8_gypfiles/v8_inspector_headers.stamp $(builddir)/d8 $(obj).target/tools/icu/icuuc.stamp $(builddir)/openssl-cli $(builddir)/ngtcp2_test_server $(builddir)/ngtcp2_test_client
 
 # Make sure our actions/rules run before any of us.
 $(OBJS): | $(action__home_xm86_nodejs_node_gyp_libnode_target_node_js2c_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_convert_node_protocol_to_json_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_node_protocol_generated_sources_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_concatenate_protocols_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_v8_inspector_compress_protocol_json_outputs)
@@ -580,7 +580,7 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.cpp FORCE_DO_CMD
 $(obj).target/libnode.a: | $(action__home_xm86_nodejs_node_gyp_libnode_target_node_js2c_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_convert_node_protocol_to_json_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_node_protocol_generated_sources_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_concatenate_protocols_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_v8_inspector_compress_protocol_json_outputs)
 
 # Preserve order dependency of special output on deps.
-$(action__home_xm86_nodejs_node_gyp_libnode_target_node_js2c_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_convert_node_protocol_to_json_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_node_protocol_generated_sources_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_concatenate_protocols_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_v8_inspector_compress_protocol_json_outputs): | $(obj).target/deps/googletest/gtest_prod.stamp $(builddir)/node_js2c $(obj).target/tools/v8_gypfiles/v8_inspector_headers.stamp $(obj).target/tools/icu/icuuc.stamp $(builddir)/openssl-cli $(builddir)/ngtcp2_test_server $(builddir)/ngtcp2_test_client
+$(action__home_xm86_nodejs_node_gyp_libnode_target_node_js2c_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_convert_node_protocol_to_json_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_node_protocol_generated_sources_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_concatenate_protocols_outputs) $(action__home_xm86_nodejs_node_gyp_libnode_target_v8_inspector_compress_protocol_json_outputs): | $(obj).target/deps/googletest/gtest_prod.stamp $(builddir)/node_js2c $(obj).target/tools/v8_gypfiles/v8_inspector_headers.stamp $(builddir)/d8 $(obj).target/tools/icu/icuuc.stamp $(builddir)/openssl-cli $(builddir)/ngtcp2_test_server $(builddir)/ngtcp2_test_client
 
 LDFLAGS_Debug := \
 	-pthread \

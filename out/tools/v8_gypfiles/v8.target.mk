@@ -25,3 +25,7 @@ $(obj).target/tools/v8_gypfiles/libv8.a:
 .PHONY: v8
 v8: $(obj).target/tools/v8_gypfiles/libv8.a
 
+# Add target alias to "all" target.
+.PHONY: all
+all: v8
+
